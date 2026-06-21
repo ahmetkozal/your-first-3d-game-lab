@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 signal hit
 
 # How fast the player moves in meters per second
@@ -97,8 +99,5 @@ func die():
 	queue_free()
 
 func _on_mob_detector_body_entered(body):
-	if body.collision_layer & (4):
-		
-		print("POWER")
-	elif body.collision_layer & (2):
+	if body.collision_layer & (2):
 		die()

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1kpbslsp5gtc"]
 
-[ext_resource type="Script" uid="uid://nqmew1ikc2d0" path="res://speed_powerup.gd" id="1_3d23n"]
-[ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="1_wg43s"]
+[ext_resource type="Script" uid="uid://nqmew1ikc2d0" path="res://scripts/speed_powerup.gd" id="1_dk4ou"]
+[ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="2_x34i4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0opyb"]
 radius = 1.0617113
@@ -123,11 +123,11 @@ _data = {
 
 [node name="speed_powerup" type="Area3D" unique_id=1534372182 groups=["speed_powerups"]]
 collision_layer = 8
-script = ExtResource("1_3d23n")
+script = ExtResource("1_dk4ou")
 
 [node name="pivot" type="Node3D" parent="." unique_id=356942446]
 
-[node name="speedy" parent="pivot" unique_id=17893401 instance=ExtResource("1_wg43s")]
+[node name="speedy" parent="pivot" unique_id=17893401 instance=ExtResource("2_x34i4")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1164184, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1214827061]
@@ -147,4 +147,5 @@ light_energy = 16.0
 wait_time = 10.0
 autostart = true
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,10 +8,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func initialize(start_position, player_position):
 	# We position the mob by placing it at start_position
 	# and rotate it towards player_position, so it looks at the player.
@@ -33,3 +29,9 @@ func use():
 	queue_free()
 	
 	
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is Player:
+		body.get_node("PowerupManager").use_speed_powerup()
+		queue_free()

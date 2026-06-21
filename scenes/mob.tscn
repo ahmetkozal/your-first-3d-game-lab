@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1twr2i6iwxt8"]
 
-[ext_resource type="PackedScene" uid="uid://bicorb7we351t" path="res://art/mob.glb" id="1_dy6sc"]
-[ext_resource type="Script" uid="uid://f6gtja8cq4mv" path="res://mob.gd" id="1_nokgg"]
+[ext_resource type="Script" uid="uid://f6gtja8cq4mv" path="res://scripts/mob.gd" id="1_bsing"]
+[ext_resource type="PackedScene" uid="uid://bicorb7we351t" path="res://art/mob.glb" id="2_d4cuo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqmrj"]
 size = Vector3(2.2556152, 1.2082214, 2.7304688)
@@ -43,11 +43,11 @@ _data = {
 [node name="Mob" type="CharacterBody3D" unique_id=1533600740 groups=["mob"]]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_nokgg")
+script = ExtResource("1_bsing")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1667000007]
 
-[node name="Character" parent="Pivot" unique_id=1350042576 instance=ExtResource("1_dy6sc")]
+[node name="Character" parent="Pivot" unique_id=1350042576 instance=ExtResource("2_d4cuo")]
 transform = Transform3D(1, 0, 0, 0, 0.9931022, 0.11725186, 0, -0.11725186, 0.9931022, 0, 0.45440972, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=782743341]
