@@ -33,9 +33,3 @@ func use():
 	queue_free()
 	
 	
-
-
-func _on_body_entered(body: Node3D) -> void:
-	if "Player" in body.name:
-		body.powerup_manager.use_speed_powerup()
-		use()
