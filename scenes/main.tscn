@@ -9,14 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://ch0q1oyyabnpu" path="res://scenes/immortal_powerup.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://d1kpbslsp5gtc" path="res://scenes/speed_powerup.tscn" id="6_7mycd"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tipki"]
+albedo_color = Color(0.29411766, 0.36078432, 0.61960787, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_ysbgh"]
+material = SubResource("StandardMaterial3D_tipki")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bsrki"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqmrj"]
-albedo_color = Color(0.99999994, 0.4144429, 0.14284086, 1)
+albedo_color = Color(0.6849905, 2.4870574, 3.5629182, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2m5a4"]
 material = SubResource("StandardMaterial3D_kqmrj")
@@ -32,6 +36,9 @@ point_count = 4
 [sub_resource type="Theme" id="Theme_ysbgh"]
 default_font = ExtResource("4_lquwl")
 default_font_size = 22
+
+[sub_resource type="Environment" id="Environment_0opyb"]
+glow_enabled = true
 
 [node name="Main" type="Node" unique_id=1153691554]
 script = ExtResource("1_0xm2m")
@@ -147,6 +154,9 @@ text = "Press \"Enter\" to retry"
 [node name="PowerUpTimer" type="Timer" parent="." unique_id=380382133]
 wait_time = 5.0
 autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1877517421]
+environment = SubResource("Environment_0opyb")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

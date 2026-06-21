@@ -114,3 +114,5 @@ script = ExtResource("4_dqkch")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
+
+[editable path="Pivot/Character"]

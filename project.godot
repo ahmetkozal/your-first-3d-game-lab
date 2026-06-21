@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="your first 3d game+"
-run/main_scene="uid://cqow47bch5ocs"
+run/main_scene="uid://br58vp2x5e4qm"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://art/icon.svg"
 
