@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://drlldp7l6q0o4" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://c5bqhq6ib1qr7" path="res://scripts/powerup_manager.gd" id="3_qlg0r"]
+[ext_resource type="Script" uid="uid://04fhkwx3j3ql" path="res://scripts/speed_label.gd" id="4_dqkch"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2m5a4"]
 radius = 0.8
@@ -99,5 +100,17 @@ autoplay = &"float"
 
 [node name="PowerupManager" type="Node" parent="." unique_id=1221111682]
 script = ExtResource("3_qlg0r")
+
+[node name="SpeedLabel" type="Label" parent="." unique_id=532619692]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Speed: "
+script = ExtResource("4_dqkch")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

@@ -2,6 +2,8 @@ extends Node
 
 @export var mob_scene: PackedScene
 @export var speed_scene: PackedScene
+@export var jump_scene: PackedScene
+@export var immortal_scene: PackedScene
 
 func _ready():
 	$UserInterface/Retry.hide()
@@ -34,9 +36,21 @@ func _unhandled_input(event):
 
 
 func _on_power_up_timer_timeout():
-	var speed_powerup = speed_scene.instantiate()
+	# 1. Sahneleri bir diziye (Array) koyuyoruz
+	var powerup_scenes = [speed_scene, jump_scene, immortal_scene]
+
+	# 2. Diziden rastgele bir sahne seçiyoruz
+	var chosen_scene = powerup_scenes.pick_random()
+	
+	# 3. YALNIZCA seçilen sahneyi instantiate ediyoruz (üretiyoruz)
+	var powerup = chosen_scene.instantiate()
+	
+	# 4. Konum ve yönlendirme hesaplamaları (Mevcut kodunla aynı)
 	var powerup_spawn_location = get_node("SpawnPath/SpawnLocation")
 	powerup_spawn_location.progress_ratio = randf()
+	
 	var player_position = $Player.position
-	speed_powerup.initialize(powerup_spawn_location.position, player_position)
-	add_child(speed_powerup)
+	
+	# 5. Seçilen powerup hangisiyse onu başlatıp sahneye ekliyoruz
+	powerup.initialize(powerup_spawn_location.position, player_position)
+	add_child(powerup)

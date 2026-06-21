@@ -16,6 +16,7 @@ signal hit
 
 var target_velocity = Vector3.ZERO
 var can_double_jump: bool = false
+var can_die: bool = true
 
 func _physics_process(delta):
 	# We create a local variable to store the input direction
@@ -95,8 +96,9 @@ func _physics_process(delta):
 
 # And this function at the bottom.
 func die():
-	hit.emit()
-	queue_free()
+	if can_die:
+		hit.emit()
+		queue_free()
 
 func _on_mob_detector_body_entered(body):
 	if body.collision_layer & (2):

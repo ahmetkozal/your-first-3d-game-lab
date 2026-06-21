@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cljo0h54ukqrs" path="res://scripts/main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://scenes/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://c1twr2i6iwxt8" path="res://scenes/mob.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://scenes/Characters/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c1twr2i6iwxt8" path="res://scenes/Characters/mob.tscn" id="2_h2yge"]
 [ext_resource type="FontFile" uid="uid://cyxhh7ddkn62q" path="res://art/Montserrat-Medium.ttf" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dslw0buxi7ipq" path="res://scenes/jump_powerup.tscn" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://c7edwm6ugoth7" path="res://scripts/score_label.gd" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ch0q1oyyabnpu" path="res://scenes/immortal_powerup.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://d1kpbslsp5gtc" path="res://scenes/speed_powerup.tscn" id="6_7mycd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ysbgh"]
@@ -35,6 +37,8 @@ default_font_size = 22
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_h2yge")
 speed_scene = ExtResource("6_7mycd")
+jump_scene = ExtResource("4_o6xl0")
+immortal_scene = ExtResource("5_tipki")
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1249942167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

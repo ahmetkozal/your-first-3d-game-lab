@@ -24,9 +24,11 @@ func use():
 	animation_player.play("powerup_queue_free_anim")
 	await animation_player.animation_finished
 	queue_free()
+	
+	
 
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
-		body.get_node("PowerupManager").use_speed_powerup(10)
+		body.get_node("PowerupManager").use_immortal()
 		queue_free()

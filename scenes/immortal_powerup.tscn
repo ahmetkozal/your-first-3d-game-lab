@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://d1kpbslsp5gtc"]
+[gd_scene format=3 uid="uid://ch0q1oyyabnpu"]
 
-[ext_resource type="Script" uid="uid://nqmew1ikc2d0" path="res://scripts/speed_powerup.gd" id="1_dk4ou"]
-[ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="2_x34i4"]
+[ext_resource type="Script" uid="uid://86ridvr4oyk0" path="res://scripts/immortal_powerup.gd" id="1_5pa5o"]
+[ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="2_k1idq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0opyb"]
 radius = 1.0617113
@@ -11,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pivot/speedy:rotation")
+tracks/0/path = NodePath("pivot/immortality:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/speedy:position")
+tracks/1/path = NodePath("pivot/immortality:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +35,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("pivot/speedy:scale")
+tracks/2/path = NodePath("pivot/immortality:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -51,7 +51,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pivot/speedy:scale")
+tracks/0/path = NodePath("pivot/immortality:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -63,7 +63,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/speedy:rotation")
+tracks/1/path = NodePath("pivot/immortality:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -75,7 +75,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("pivot/speedy:position")
+tracks/2/path = NodePath("pivot/immortality:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -92,7 +92,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pivot/speedy:rotation")
+tracks/0/path = NodePath("pivot/immortality:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -104,7 +104,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pivot/speedy:position")
+tracks/1/path = NodePath("pivot/immortality:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -129,20 +129,19 @@ initial_velocity_max = 5.0
 gravity = Vector3(0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h86fw"]
-albedo_color = Color(1, 1, 0, 1)
 metallic = 1.0
 roughness = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_0opyb"]
 material = SubResource("StandardMaterial3D_h86fw")
 
-[node name="speed_powerup" type="Area3D" unique_id=1534372182 groups=["speed_powerups"]]
+[node name="immortal_powerup" type="Area3D" unique_id=1534372182 groups=["jump_powerups"]]
 collision_layer = 8
-script = ExtResource("1_dk4ou")
+script = ExtResource("1_5pa5o")
 
 [node name="pivot" type="Node3D" parent="." unique_id=356942446]
 
-[node name="speedy" parent="pivot" unique_id=17893401 instance=ExtResource("2_x34i4")]
+[node name="immortality" parent="pivot" unique_id=17893401 instance=ExtResource("2_k1idq")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1164184, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1214827061]
@@ -154,8 +153,7 @@ libraries/ = SubResource("AnimationLibrary_mg5uj")
 autoplay = &"speedy_idle"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=320251557 groups=["speed_powerups"]]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.7334242, 0)
-light_color = Color(1, 1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.856649, 0)
 light_energy = 16.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1349974491]
