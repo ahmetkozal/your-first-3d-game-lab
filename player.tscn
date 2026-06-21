@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://drlldp7l6q0o4" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://c5bqhq6ib1qr7" path="res://powerup_manager.gd" id="3_i3pqv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2m5a4"]
 radius = 0.8
@@ -95,5 +96,8 @@ shape = SubResource("CylinderShape3D_2m5a4")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1451922730]
 libraries/ = SubResource("AnimationLibrary_hqtel")
 autoplay = &"float"
+
+[node name="PowerupManager" type="Node" parent="." unique_id=1042201725]
+script = ExtResource("3_i3pqv")
 
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

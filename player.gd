@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name Player
 signal hit
 
 # How fast the player moves in meters per second
@@ -11,6 +11,8 @@ signal hit
 # Vertical impulse applied to the character upon bouncing over a mob
 # in meters per second.
 @export var bounce_impulse = 16
+
+@onready var powerup_manager = $PowerupManager
 
 var target_velocity = Vector3.ZERO
 var can_double_jump: bool = false
@@ -26,18 +28,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-	
-	# We check for each move input and update the direction accordingly
-	#if Input.is_action_pressed("move_right"):
-		#direction.x = direction.x + 1
-	#if Input.is_action_pressed("move_left"):
-		#direction.x = direction.x - 1
-	#if Input.is_action_pressed("move_back"):
-		## Notice how we are working with the vector's x and z axes.
-		## In 3D, the XZ plane is the ground plane.
-		#direction.z = direction.z + 1
-	#if Input.is_action_pressed("move_forward"):
-		#direction.z = direction.z - 1
+
 
 	# Prevent diagonal moving fast af
 	if direction != Vector3.ZERO:
@@ -97,8 +88,5 @@ func die():
 	queue_free()
 
 func _on_mob_detector_body_entered(body):
-	if body.collision_layer & (4):
-		
-		print("POWER")
-	elif body.collision_layer & (2):
+	if body.collision_layer & (2):
 		die()
