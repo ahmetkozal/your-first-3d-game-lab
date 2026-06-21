@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://d1kpbslsp5gtc"]
+
+[ext_resource type="Script" uid="uid://nqmew1ikc2d0" path="res://speed_powerup.gd" id="1_3d23n"]
+[ext_resource type="PackedScene" uid="uid://d0ypm0v45pwdv" path="res://art/player.glb" id="1_wg43s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0opyb"]
+radius = 1.0617113
+
+[sub_resource type="Animation" id="Animation_3d23n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/speedy:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/speedy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.1164184, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/speedy:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mg5uj"]
+resource_name = "powerup_queue_free_anim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/speedy:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.01, 0.01, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/speedy:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0), Vector3(1.5707964, 6.2831855, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/speedy:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.1164184, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rs1hw"]
+resource_name = "speedy_idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/speedy:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.39935932, 0.49996105, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0), Vector3(1.5707964, 0.7853982, 0), Vector3(1.5707964, 3.1415927, 0), Vector3(1.5707964, 6.2831855, 0), Vector3(1.5707964, 6.2831855, 0), Vector3(1.5707964, 6.2831855, 0), Vector3(1.5707964, 3.1415927, 0), Vector3(1.5707964, 0.7853982, 0), Vector3(1.5707964, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/speedy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.1164184, 0), Vector3(0, 1.836, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mg5uj"]
+_data = {
+&"RESET": SubResource("Animation_3d23n"),
+&"powerup_queue_free_anim": SubResource("Animation_mg5uj"),
+&"speedy_idle": SubResource("Animation_rs1hw")
+}
+
+[node name="speed_powerup" type="Area3D" unique_id=1534372182 groups=["speed_powerups"]]
+collision_layer = 8
+script = ExtResource("1_3d23n")
+
+[node name="pivot" type="Node3D" parent="." unique_id=356942446]
+
+[node name="speedy" parent="pivot" unique_id=17893401 instance=ExtResource("1_wg43s")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1164184, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1214827061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11, 0)
+shape = SubResource("SphereShape3D_0opyb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=777554333]
+libraries/ = SubResource("AnimationLibrary_mg5uj")
+autoplay = &"speedy_idle"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=320251557 groups=["speed_powerups"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.856649, 0)
+light_color = Color(1, 1, 0, 1)
+light_energy = 16.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1349974491]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
