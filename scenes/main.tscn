@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c7edwm6ugoth7" path="res://scripts/score_label.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ch0q1oyyabnpu" path="res://scenes/immortal_powerup.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://d1kpbslsp5gtc" path="res://scenes/speed_powerup.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bm3mch0gluv1v" path="res://scripts/camera_3d.gd" id="7_ya4ey"]
 [ext_resource type="FontFile" uid="uid://b02mp8t66wh6m" path="res://art/Due Mining.otf" id="9_85g3d"]
 [ext_resource type="Script" uid="uid://cdcn62q5i3rdu" path="res://scripts/combo_label.gd" id="10_choun"]
 
@@ -68,6 +69,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=885659068]
 transform = Transform3D(-1, 6.1817246e-08, -6.1817246e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 18.200377, -30.164322)
+script = ExtResource("7_ya4ey")
 
 [node name="Player" parent="." unique_id=1146947820 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0504417, 0)
