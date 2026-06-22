@@ -4,6 +4,9 @@ extends Node
 @export var speed_scene: PackedScene
 @export var jump_scene: PackedScene
 @export var immortal_scene: PackedScene
+@export var player: PackedScene
+
+
 
 func _ready():
 	$UserInterface/Retry.hide()
@@ -24,6 +27,7 @@ func _on_mob_timer_timeout():
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
 	mob.squashed.connect($UserInterface/ScoreLabel._on_mob_squashed.bind())
+	mob.squashed.connect($UserInterface/ComboLabel._on_mob_squashed.bind())
 
 func _on_player_hit():
 	$MobTimer.stop()

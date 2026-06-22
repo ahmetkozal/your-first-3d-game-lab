@@ -3,7 +3,7 @@ extends CharacterBody3D
 class_name Player
 
 signal hit
-
+signal landed
 # How fast the player moves in meters per second
 @export var speed = 14
 # The downward acceleration while in the air, in meters per second squared.
@@ -17,6 +17,7 @@ signal hit
 var target_velocity = Vector3.ZERO
 var can_double_jump: bool = false
 var can_die: bool = true
+var combo: int = 0
 
 func _physics_process(delta):
 	# We create a local variable to store the input direction
@@ -64,9 +65,11 @@ func _physics_process(delta):
 			can_double_jump = false
 
 	# Jumping.
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		can_double_jump = true
-		target_velocity.y = jump_impulse
+	if is_on_floor():
+		emit_signal("landed")
+		if Input.is_action_just_pressed("jump"):
+			can_double_jump = true
+			target_velocity.y = jump_impulse
 
 	# Iterate through all collisions that occurred this frame
 	# in C this would be for(int i = 0; i < collisions.Count; i++)
@@ -85,7 +88,9 @@ func _physics_process(delta):
 			if Vector3.UP.dot(collision.get_normal()) > 0.1:
 				# If so, we squash it and bounce.
 				mob.squash()
+				
 				target_velocity.y = bounce_impulse
+				combo+=1
 				# Prevent further duplicate calls.
 				break
 		
@@ -101,5 +106,5 @@ func die():
 		queue_free()
 
 func _on_mob_detector_body_entered(body):
-	if body.collision_layer & (2):
+	if body.collision_layer & (2) and self.is_on_floor():
 		die()

@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://c7edwm6ugoth7" path="res://scripts/score_label.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ch0q1oyyabnpu" path="res://scenes/immortal_powerup.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://d1kpbslsp5gtc" path="res://scenes/speed_powerup.tscn" id="6_7mycd"]
+[ext_resource type="FontFile" uid="uid://b02mp8t66wh6m" path="res://art/Due Mining.otf" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://cdcn62q5i3rdu" path="res://scripts/combo_label.gd" id="10_choun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tipki"]
 albedo_color = Color(0.29411766, 0.36078432, 0.61960787, 1)
@@ -46,6 +48,7 @@ mob_scene = ExtResource("2_h2yge")
 speed_scene = ExtResource("6_7mycd")
 jump_scene = ExtResource("4_o6xl0")
 immortal_scene = ExtResource("5_tipki")
+player = ExtResource("1_ig7tw")
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1249942167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -151,6 +154,26 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press \"Enter\" to retry"
 
+[node name="ComboLabel" type="Label" parent="UserInterface" unique_id=554277062]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(3.5629182, 2.527402, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("9_85g3d")
+theme_override_font_sizes/font_size = 30
+text = "COMBO: 0 "
+script = ExtResource("10_choun")
+
 [node name="PowerUpTimer" type="Timer" parent="." unique_id=380382133]
 wait_time = 5.0
 autostart = true
@@ -159,5 +182,6 @@ autostart = true
 environment = SubResource("Environment_0opyb")
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="landed" from="Player" to="UserInterface/ComboLabel" method="_on_player_landed"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="PowerUpTimer" to="." method="_on_power_up_timer_timeout"]

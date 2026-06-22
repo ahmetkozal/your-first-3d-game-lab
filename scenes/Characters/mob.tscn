@@ -6,6 +6,45 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqmrj"]
 size = Vector3(2.2556152, 1.2082214, 2.7304688)
 
+[sub_resource type="Animation" id="Animation_fowxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.15707964, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.35, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Character:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.99999994, 0.99999994)]
+}
+
 [sub_resource type="Animation" id="Animation_nokgg"]
 resource_name = "float"
 length = 1.2
@@ -35,9 +74,51 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.13962634, 0, 0), Vector3(-0.15707964, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_2gqib"]
+resource_name = "mob_death_anim"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1.3195081),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.35953784, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.35, 0), Vector3(0, 0.83, 0), Vector3(0, -0.045, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Character:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 0.99999994, 0.99999994), Vector3(0.145, 0.145, 0.145)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ubaqv"]
 _data = {
-&"float": SubResource("Animation_nokgg")
+&"RESET": SubResource("Animation_fowxg"),
+&"float": SubResource("Animation_nokgg"),
+&"mob_death_anim": SubResource("Animation_2gqib")
 }
 
 [node name="Mob" type="CharacterBody3D" unique_id=1533600740 groups=["mob"]]
@@ -48,7 +129,7 @@ script = ExtResource("1_bsing")
 [node name="Pivot" type="Node3D" parent="." unique_id=1667000007]
 
 [node name="Character" parent="Pivot" unique_id=1350042576 instance=ExtResource("2_d4cuo")]
-transform = Transform3D(1, 0, 0, 0, 0.995637, -0.0933106, 0, 0.0933106, 0.995637, 0, 0.6307635, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9876883, 0.15643446, 0, -0.15643446, 0.9876883, 0, 0.35, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=782743341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3531952, 0)
@@ -61,4 +142,5 @@ aabb = AABB(-1, -0.23836783, -0.9956608, 2, 0.47673565, 1.9913216)
 libraries/ = SubResource("AnimationLibrary_ubaqv")
 autoplay = &"float"
 
+[connection signal="squashed" from="." to="." method="_on_squashed"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

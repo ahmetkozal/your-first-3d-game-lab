@@ -7,7 +7,6 @@ func use_speed_powerup(amount: int):
 	await get_tree().create_timer(5).timeout
 	player.speed -= amount
 
-
 func use_higher_jump(amount: int):
 	player.jump_impulse += amount
 	await get_tree().create_timer(5).timeout

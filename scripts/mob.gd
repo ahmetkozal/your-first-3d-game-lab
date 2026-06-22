@@ -5,6 +5,8 @@ extends CharacterBody3D
 # Maximum speed of the mob in meters per second.
 @export var max_speed = 18
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 # Emitted when the player jumped on the mob
 signal squashed
 
@@ -34,4 +36,6 @@ func _on_visible_on_screen_notifier_3d_screen_exited():
 
 func squash():
 	squashed.emit()
-	queue_free() # Destroy this node
+	animation_player.play("mob_death_anim")
+	await animation_player.animation_finished
+	queue_free()
