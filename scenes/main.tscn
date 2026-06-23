@@ -187,8 +187,343 @@ autostart = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1877517421]
 environment = SubResource("Environment_0opyb")
 
-[node name="Leave" parent="." unique_id=143981309 instance=ExtResource("13_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.60798, 2.0830731, 0)
+[node name="Leaves" type="Node3D" parent="." unique_id=629430667]
+
+[node name="Leave" parent="Leaves" unique_id=143981309 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.914659, -0.59180737, 0)
+
+[node name="Leave2" parent="Leaves" unique_id=46307237 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.914659, -0.59180737, -0.59724236)
+
+[node name="Leave3" parent="Leaves" unique_id=768341435 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.608193, -0.59180737, -0.59724236)
+
+[node name="Leave4" parent="Leaves" unique_id=1032693902 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.346902, -0.59180737, 0.85853434)
+
+[node name="Leave5" parent="Leaves" unique_id=147850015 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33121, -0.59180737, -1.1944842)
+
+[node name="Leave6" parent="Leaves" unique_id=1347393855 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.845952, -0.59180737, -2.6875887)
+
+[node name="Leave7" parent="Leaves" unique_id=522702582 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5630217, -0.59180737, -3.9567275)
+
+[node name="Leave8" parent="Leaves" unique_id=369002571 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5787115, -0.59180737, -4.9272456)
+
+[node name="Leave9" parent="Leaves" unique_id=342416676 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.466729, -0.59180737, -3.9940553)
+
+[node name="Leave10" parent="Leaves" unique_id=1671293584 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.168107, -0.59180737, -4.3300033)
+
+[node name="Leave11" parent="Leaves" unique_id=945183387 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.869487, -0.59180737, -5.1138835)
+
+[node name="Leave12" parent="Leaves" unique_id=459727445 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.504058, -0.59180737, -5.4125037)
+
+[node name="Leave13" parent="Leaves" unique_id=867691029 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.211383, -0.59180737, -3.0981917)
+
+[node name="Leave14" parent="Leaves" unique_id=1206167959 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.390174, -0.59180737, -1.7170703)
+
+[node name="Leave15" parent="Leaves" unique_id=1959705339 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.203536, -0.59180737, -0.70922494)
+
+[node name="Leave16" parent="Leaves" unique_id=79533146 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5021563, -0.59180737, 1.0825003)
+
+[node name="Leave17" parent="Leaves" unique_id=1557521035 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8224115, -0.59180737, 2.3143117)
+
+[node name="Leave18" parent="Leaves" unique_id=1572975324 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12646961, -0.59180737, 2.9488816)
+
+[node name="Leave19" parent="Leaves" unique_id=1179485155 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0675058, -0.59180737, 2.3889658)
+
+[node name="Leave20" parent="Leaves" unique_id=309224213 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7845764, -0.59180737, 1.343792)
+
+[node name="Leave21" parent="Leaves" unique_id=487415945 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.867077, -0.59180737, 0.18663692)
+
+[node name="Leave22" parent="Leaves" unique_id=1359574089 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.538974, -0.59180737, -0.8958633)
+
+[node name="Leave23" parent="Leaves" unique_id=676445546 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3975077, -0.59180737, -2.4636226)
+
+[node name="Leave24" parent="Leaves" unique_id=1294849385 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2560434, -0.59180737, -3.5461235)
+
+[node name="Leave25" parent="Leaves" unique_id=1800047625 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.301217, -0.59180737, -3.0981922)
+
+[node name="Leave26" parent="Leaves" unique_id=56569721 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.383718, -0.59180737, -1.7170708)
+
+[node name="Leave27" parent="Leaves" unique_id=892413664 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.906304, -0.59180737, -0.03732872)
+
+[node name="Leave28" parent="Leaves" unique_id=1750986679 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.906304, -0.59180737, 1.8290523)
+
+[node name="Leave29" parent="Leaves" unique_id=918070180 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.749148, -0.59180737, 3.135518)
+
+[node name="Leave30" parent="Leaves" unique_id=1558528256 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.517338, -0.59180737, 4.479311)
+
+[node name="Leave31" parent="Leaves" unique_id=1492277191 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5841484, -0.59180737, 4.292672)
+
+[node name="Leave32" parent="Leaves" unique_id=1803776761 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5468206, -0.59180737, 3.396811)
+
+[node name="Leave33" parent="Leaves" unique_id=1667440321 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.845442, -0.59180737, 2.3143108)
+
+[node name="Leave34" parent="Leaves" unique_id=1878165846 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.442683, -0.59180737, 2.3516386)
+
+[node name="Leave35" parent="Leaves" unique_id=486388607 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8532877, -0.59180737, 3.0608642)
+
+[node name="Leave36" parent="Leaves" unique_id=480705559 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8906155, -0.59180737, 3.8820713)
+
+[node name="Leave37" parent="Leaves" unique_id=1856381048 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7334595, -0.59180737, 4.3673296)
+
+[node name="Leave38" parent="Leaves" unique_id=372088239 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1205263, -0.59180737, 5.2631927)
+
+[node name="Leave39" parent="Leaves" unique_id=1240802717 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.179491, -0.59180737, 4.8152604)
+
+[node name="Leave40" parent="Leaves" unique_id=594084553 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76104164, -0.59180737, 4.6659503)
+
+[node name="Leave41" parent="Leaves" unique_id=1523808754 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7320633, -0.59180737, 3.135518)
+
+[node name="Leave42" parent="Leaves" unique_id=1563165063 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8518925, -0.59180737, 4.3673277)
+
+[node name="Leave43" parent="Leaves" unique_id=725760693 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.240858, -0.59180737, 1.9783602)
+
+[node name="Leave44" parent="Leaves" unique_id=92857261 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1878395, -0.59180737, -0.8212106)
+
+[node name="Leave45" parent="Leaves" unique_id=2111374527 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47076988, -0.59180737, -2.38897)
+
+[node name="Leave46" parent="Leaves" unique_id=1604979503 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8062153, -0.59180737, -3.9194026)
+
+[node name="Leave47" parent="Leaves" unique_id=1691739203 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76104355, -0.59180737, -5.151213)
+
+[node name="Leave48" parent="Leaves" unique_id=1415927471 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76104355, -0.59180737, -5.151213)
+
+[node name="Leave49" parent="Leaves" unique_id=2074542188 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.458377, -0.59180737, -4.292678)
+
+[node name="Leave50" parent="Leaves" unique_id=230144795 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.749152, -0.59180737, -5.263196)
+
+[node name="Leave51" parent="Leaves" unique_id=226609516 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.375875, -0.59180737, -5.8977647)
+
+[node name="Leave52" parent="Leaves" unique_id=1688312585 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.354239, -0.59180737, -5.7857823)
+
+[node name="Leave53" parent="Leaves" unique_id=2080211519 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.324758, -0.59180737, -5.487162)
+
+[node name="Leave54" parent="Leaves" unique_id=2038806364 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.474069, -0.59180737, -6.0470757)
+
+[node name="Leave55" parent="Leaves" unique_id=1252828630 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.063464, -0.59180737, -6.45768)
+
+[node name="Leave56" parent="Leaves" unique_id=1429474573 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8394985, -0.59180737, -6.30837)
+
+[node name="Leave57" parent="Leaves" unique_id=1564030313 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.354239, -0.59180737, -6.4203534)
+
+[node name="Leave58" parent="Leaves" unique_id=2049472929 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8394985, -0.59180737, -5.636473)
+
+[node name="Leave59" parent="Leaves" unique_id=1426082936 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.175447, -0.59180737, -5.076559)
+
+[node name="Leave60" parent="Leaves" unique_id=670448539 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.474068, -0.59180737, -5.823111)
+
+[node name="Leave61" parent="Leaves" unique_id=1697295972 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.764843, -0.59180737, 5.6364665)
+
+[node name="Leave62" parent="Leaves" unique_id=810070600 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.578205, -0.59180737, 5.935086)
+
+[node name="Leave63" parent="Leaves" unique_id=320845940 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.876826, -0.59180737, 6.7562947)
+
+[node name="Leave64" parent="Leaves" unique_id=2125138906 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.548723, -0.59180737, 6.569656)
+
+[node name="Leave65" parent="Leaves" unique_id=1015285750 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.772688, -0.59180737, 5.748447)
+
+[node name="Leave66" parent="Leaves" unique_id=1161770446 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.511396, -0.59180737, 4.8899117)
+
+[node name="Leave67" parent="Leaves" unique_id=50904023 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.399413, -0.59180737, 5.412498)
+
+[node name="Leave68" parent="Leaves" unique_id=667952987 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.13812, -0.59180737, 4.404652)
+
+[node name="Leave69" parent="Leaves" unique_id=1848518270 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.914154, -0.59180737, 5.6364636)
+
+[node name="Leave70" parent="Leaves" unique_id=454157991 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.018291, -0.59180737, 6.383015)
+
+[node name="Leave71" parent="Leaves" unique_id=2057326624 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.50355, -0.59180737, 7.0175853)
+
+[node name="Leave72" parent="Leaves" unique_id=710630226 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.138119, -0.59180737, 6.1217227)
+
+[node name="Leave73" parent="Leaves" unique_id=1487557260 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.594397, -0.59180737, 5.0392222)
+
+[node name="Leave74" parent="Leaves" unique_id=1548637093 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25845, -0.59180737, 5.935084)
+
+[node name="Leave75" parent="Leaves" unique_id=1774198227 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.399912, -0.59180737, 6.3456883)
+
+[node name="Leave76" parent="Leaves" unique_id=588149322 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.877327, -0.59180737, 5.897758)
+
+[node name="Leave77" parent="Leaves" unique_id=1119241694 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.951981, -0.59180737, 5.22586)
+
+[node name="Leave78" parent="Leaves" unique_id=372100220 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.810514, -0.59180737, 6.1217227)
+
+[node name="Leave79" parent="Leaves" unique_id=586768253 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.407757, -0.59180737, 6.9429297)
+
+[node name="Leave80" parent="Leaves" unique_id=243119350 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.594395, -0.59180737, 6.5323253)
+
+[node name="Leave81" parent="Leaves" unique_id=636646016 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.735861, -0.59180737, 5.748446)
+
+[node name="Leave82" parent="Leaves" unique_id=2028211478 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.10129, -0.59180737, -6.2337184)
+
+[node name="Leave83" parent="Leaves" unique_id=1191682066 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.295776, -0.59180737, -6.7189775)
+
+[node name="Leave84" parent="Leaves" unique_id=1853359898 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.706377, -0.59180737, -5.636477)
+
+[node name="Leave85" parent="Leaves" unique_id=167482335 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.99715, -0.59180737, -5.039235)
+
+[node name="Leave86" parent="Leaves" unique_id=32765485 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.773186, -0.59180737, -5.636477)
+
+[node name="Leave87" parent="Leaves" unique_id=924966851 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.071804, -0.59180737, -5.785787)
+
+[node name="Leave88" parent="Leaves" unique_id=376742017 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.557062, -0.59180737, -5.2258725)
+
+[node name="Leave89" parent="Leaves" unique_id=1723874610 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.333096, -0.59180737, -6.7563043)
+
+[node name="Leave90" parent="Leaves" unique_id=465124524 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.474562, -0.59180737, -6.4203563)
+
+[node name="Leave91" parent="Leaves" unique_id=319736258 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.623871, -0.59180737, -7.129582)
+
+[node name="Leave92" parent="Leaves" unique_id=1659073814 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.063955, -0.59180737, -5.0019083)
+
+[node name="Leave93" parent="Leaves" unique_id=1686507025 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.152403, -0.59180737, -0.63457775)
+
+[node name="Leave94" parent="Leaves" unique_id=788444916 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.421541, -0.59180737, -2.5382862)
+
+[node name="Leave95" parent="Leaves" unique_id=1902516015 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5413685, -0.59180737, -0.5225947)
+
+[node name="Leave96" parent="Leaves" unique_id=1950895911 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.034473, -0.59180737, 0.78387177)
+
+[node name="Leave97" parent="Leaves" unique_id=1050263921 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.138611, -0.59180737, 1.6424067)
+
+[node name="Leave98" parent="Leaves" unique_id=476494027 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.637663, -0.59180737, 4.143358)
+
+[node name="Leave99" parent="Leaves" unique_id=1979557395 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.637663, -0.59180737, 4.143358)
+
+[node name="Leave100" parent="Leaves" unique_id=1085121731 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.410756, -0.59180737, 2.3336782)
+
+[node name="Leave101" parent="Leaves" unique_id=1585695184 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.166909, -0.59180737, -3.8593698)
+
+[node name="Leave102" parent="Leaves" unique_id=2133935596 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.270896, -0.59180737, -5.4582505)
+
+[node name="Leave103" parent="Leaves" unique_id=1403636109 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.302819, -0.59180737, 5.1640153)
+
+[node name="Leave104" parent="Leaves" unique_id=1317701665 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73454, -0.59180737, -4.8289695)
+
+[node name="Leave105" parent="Leaves" unique_id=655414996 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2829194, -0.59180737, 4.937159)
+
+[node name="Leave106" parent="Leaves" unique_id=1772033926 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.538653, -0.59180737, 2.7327785)
+
+[node name="Leave107" parent="Leaves" unique_id=1002987046 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.343696, -0.59180737, 3.6594486)
+
+[node name="Leave108" parent="Leaves" unique_id=1680811382 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5449314, -0.59180737, 2.9053717)
+
+[node name="Leave109" parent="Leaves" unique_id=302318258 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.854244, -0.59180737, -0.253582)
+
+[node name="Leave110" parent="Leaves" unique_id=838638721 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.498291, -0.59180737, -2.216154)
+
+[node name="Leave111" parent="Leaves" unique_id=1231493595 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7914171, -0.59180737, -3.2775126)
+
+[node name="Leave112" parent="Leaves" unique_id=1418102155 groups=["leaves"] instance=ExtResource("13_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7914171, -0.59180737, -3.2775126)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="landed" from="Player" to="UserInterface/ComboLabel" method="_on_player_landed"]
