@@ -15,7 +15,8 @@ func _camera_shake():
 		)
 		self.transform.origin = initial_transform.origin + offset
 		elapsed_time += get_process_delta_time()
-		await get_tree().process_frame
+		if get_tree():
+			await get_tree().process_frame
 
 	self.transform = initial_transform
 func _on_mob_squashed():

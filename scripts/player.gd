@@ -15,9 +15,14 @@ signal landed
 @export var bounce_impulse = 16
 
 var target_velocity = Vector3.ZERO
+
 var can_double_jump: bool = false
 var can_die: bool = true
-var combo: int = 0
+var was_on_floor: bool
+
+func _ready() -> void:
+	pass
+	
 
 func _physics_process(delta):
 	# We create a local variable to store the input direction
@@ -59,14 +64,13 @@ func _physics_process(delta):
 	
 	# Vertical Velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
+		was_on_floor = false
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 		if Input.is_action_just_pressed("jump") and can_double_jump:
 			target_velocity.y = jump_impulse
 			can_double_jump = false
 
-	# Jumping.
 	if is_on_floor():
-		emit_signal("landed")
 		if Input.is_action_just_pressed("jump"):
 			can_double_jump = true
 			target_velocity.y = jump_impulse
@@ -82,15 +86,17 @@ func _physics_process(delta):
 			continue
 
 		# If the collider is with a mob
+		if collision.get_collider().is_in_group("ground"):
+			if was_on_floor == false:
+				emit_signal("landed")
+			was_on_floor = true
 		if collision.get_collider().is_in_group("mob"):
 			var mob = collision.get_collider()
 			# we check that we are hitting it from above.
 			if Vector3.UP.dot(collision.get_normal()) > 0.1:
 				# If so, we squash it and bounce.
 				mob.squash()
-				
 				target_velocity.y = bounce_impulse
-				combo+=1
 				# Prevent further duplicate calls.
 				break
 		

@@ -136,7 +136,7 @@ roughness = 0.0
 [sub_resource type="SphereMesh" id="SphereMesh_0opyb"]
 material = SubResource("StandardMaterial3D_h86fw")
 
-[node name="jump_powerup" type="Area3D" unique_id=1534372182 groups=["jump_powerups"]]
+[node name="jump_powerup" type="Area3D" unique_id=1534372182 groups=["jump_powerups", "speed_powerups"]]
 collision_layer = 8
 script = ExtResource("1_i8jae")
 

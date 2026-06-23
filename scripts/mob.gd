@@ -35,6 +35,7 @@ func _on_visible_on_screen_notifier_3d_screen_exited():
 	queue_free()
 
 func squash():
+	$CollisionShape3D.disabled = true
 	squashed.emit()
 	animation_player.play("mob_death_anim")
 	await animation_player.animation_finished

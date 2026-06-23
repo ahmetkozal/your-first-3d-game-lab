@@ -1,12 +1,14 @@
 extends Label
 
-var combo = 0
+var combo:int = 0
 
 func _on_mob_squashed():
 	combo += 1
 	text = "COMBO: %s" % combo
+	print("SQUASHED aQ")
 
 
 func _on_player_landed() -> void:
 	combo = 0
 	text = "COMBO: %s" % combo
+	print("LANDED")
