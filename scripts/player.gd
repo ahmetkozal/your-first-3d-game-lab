@@ -14,11 +14,14 @@ signal landed
 # in meters per second.
 @export var bounce_impulse = 16
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 var target_velocity = Vector3.ZERO
 
 var can_double_jump: bool = false
 var can_die: bool = true
 var was_on_floor: bool
+var is_dead: bool = false
 
 func _ready() -> void:
 	pass
@@ -53,9 +56,9 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		# Setting the basis property will affect the rotation of the node.
 		$Pivot.basis = Basis.looking_at(direction)
-		$AnimationPlayer.speed_scale = 4
+		animation_player.speed_scale = 4
 	else:
-		$AnimationPlayer.speed_scale = 1
+		animation_player.speed_scale = 1
 
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
@@ -97,6 +100,7 @@ func _physics_process(delta):
 				# If so, we squash it and bounce.
 				mob.squash()
 				target_velocity.y = bounce_impulse
+				can_double_jump = true
 				# Prevent further duplicate calls.
 				break
 		
@@ -108,6 +112,10 @@ func _physics_process(delta):
 # And this function at the bottom.
 func die():
 	if can_die:
+		animation_player.speed_scale = 0.5
+		$AnimationPlayer.play("player_death")
+		await $AnimationPlayer.animation_finished
+		is_dead = true
 		hit.emit()
 		queue_free()
 

@@ -21,3 +21,7 @@ func _camera_shake():
 	self.transform = initial_transform
 func _on_mob_squashed():
 	_camera_shake()
+	
+#//TODO: Create a function that makes camera look down on player's death.
+func _on_player_dead():
+	pass
