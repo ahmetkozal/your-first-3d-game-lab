@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c7edwm6ugoth7" path="res://scripts/score_label.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ch0q1oyyabnpu" path="res://scenes/immortal_powerup.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://d1kpbslsp5gtc" path="res://scenes/speed_powerup.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bxg52c8y2ndfl" path="res://scenes/torch.tscn" id="7_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://bf0bu7y70lwjy" path="res://art/Rocks_Desert_Diffuse.png" id="7_eb6dy"]
 [ext_resource type="Script" uid="uid://bm3mch0gluv1v" path="res://scripts/camera_3d.gd" id="7_ya4ey"]
 [ext_resource type="FontFile" uid="uid://b02mp8t66wh6m" path="res://art/Due Mining.otf" id="9_85g3d"]
@@ -57,6 +58,65 @@ jump_scene = ExtResource("4_o6xl0")
 immortal_scene = ExtResource("5_tipki")
 player = ExtResource("1_ig7tw")
 
+[node name="Torchs" type="Node" parent="." unique_id=671956884]
+
+[node name="torch11" parent="Torchs" unique_id=1499627403 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.5863066, -6)
+
+[node name="torch12" parent="Torchs" unique_id=710659165 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1.5863066, -18)
+
+[node name="torch13" parent="Torchs" unique_id=1119322577 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5863066, -4)
+
+[node name="torch14" parent="Torchs" unique_id=1664623641 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1.5863066, -21)
+
+[node name="torch15" parent="Torchs" unique_id=864387602 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.5863066, 7)
+
+[node name="torch16" parent="Torchs" unique_id=1417074384 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.5863066, -9)
+
+[node name="torch17" parent="Torchs" unique_id=633517059 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5863066, 11)
+
+[node name="torch18" parent="Torchs" unique_id=1491062056 instance=ExtResource("7_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5863066, 11)
+
+[node name="Ground2" type="StaticBody3D" parent="." unique_id=1648733917 groups=["wall"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 28, 31)
+collision_layer = 4
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground2" unique_id=292387314]
+mesh = SubResource("BoxMesh_ysbgh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2" unique_id=502811462]
+shape = SubResource("BoxShape3D_bsrki")
+
+[node name="Ground3" type="StaticBody3D" parent="." unique_id=2085972762 groups=["wall"]]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 31, 28, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground3" unique_id=2061551141]
+mesh = SubResource("BoxMesh_ysbgh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground3" unique_id=585885294]
+shape = SubResource("BoxShape3D_bsrki")
+
+[node name="Ground4" type="StaticBody3D" parent="." unique_id=1443309053 groups=["wall"]]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -31, 28, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground4" unique_id=2025102167]
+mesh = SubResource("BoxMesh_ysbgh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground4" unique_id=425251646]
+shape = SubResource("BoxShape3D_bsrki")
+
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1249942167 groups=["ground"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 collision_layer = 4
@@ -69,16 +129,17 @@ mesh = SubResource("BoxMesh_ysbgh")
 shape = SubResource("BoxShape3D_bsrki")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1173883598]
-transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 11.586307, 0)
+transform = Transform3D(1, -1.4006211e-08, 2.6326264e-08, -2.6015247e-08, -0.70710695, 0.7071067, 1.2831128e-08, -0.7071068, -0.7071069, 0, 11.586307, 0)
 light_color = Color(1, 1, 0.5294118, 1)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=885659068]
-transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 13.237312, -30.164322)
+transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, 0, 0.7071068, 0.7071068, 8.742278e-08, 0.7071068, -0.7071068, 0, 21.237312, -32.16432)
+current = true
 script = ExtResource("7_ya4ey")
 
 [node name="Player" parent="." unique_id=1146947820 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0504417, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0504417, -14)
 
 [node name="Cylinders" type="Node3D" parent="." unique_id=1755678657]
 visible = false
@@ -103,13 +164,13 @@ mesh = SubResource("CylinderMesh_2m5a4")
 curve = SubResource("Curve3D_h2yge")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath" unique_id=1968335626]
-transform = Transform3D(-0.9999589, 0, -0.008718505, 0, 1, 0, 0.008718505, 0, -0.9999589, 23.931858, 0, -15.902315)
+transform = Transform3D(-0.9999577, 0, -0.008718494, 0, 1, 0, 0.008718494, 0, -0.9999577, 23.931858, 0, -15.902315)
 
 [node name="SpawnPathPowerUp" type="Path3D" parent="." unique_id=1416084762]
 curve = SubResource("Curve3D_h2yge")
 
 [node name="SpawnLocationPowerup" type="PathFollow3D" parent="SpawnPathPowerUp" unique_id=893913001]
-transform = Transform3D(-0.9999589, 0, -0.008718505, 0, 1, 0, 0.008718505, 0, -0.9999589, 23.931858, 0, -15.902315)
+transform = Transform3D(-0.9999577, 0, -0.008718494, 0, 1, 0, 0.008718494, 0, -0.9999577, 23.931858, 0, -15.902315)
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1798000615]
 wait_time = 0.5

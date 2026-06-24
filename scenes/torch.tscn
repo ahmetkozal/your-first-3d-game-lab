@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bxg52c8y2ndfl"]
+
+[ext_resource type="Texture2D" uid="uid://bf0bu7y70lwjy" path="res://art/Rocks_Desert_Diffuse.png" id="1_d4v33"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pn638"]
+albedo_texture = ExtResource("1_d4v33")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pn638"]
+lightmap_size_hint = Vector2i(6, 20)
+material = SubResource("StandardMaterial3D_pn638")
+top_radius = 0.12792969
+bottom_radius = 0.12792969
+height = 3.1308594
+
+[node name="torch" type="Node3D" unique_id=204087857]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1664621274]
+mesh = SubResource("CylinderMesh_pn638")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=492808875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7268677, 0)
+light_color = Color(1, 1, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
