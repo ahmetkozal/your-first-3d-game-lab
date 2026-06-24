@@ -14,7 +14,10 @@ signal landed
 # in meters per second.
 @export var bounce_impulse = 16
 
+@export var max_health:int = 3
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var damage_timer: Timer = $DamageTimer
 
 var target_velocity = Vector3.ZERO
 
@@ -22,9 +25,12 @@ var can_double_jump: bool = false
 var can_die: bool = true
 var was_on_floor: bool
 var is_dead: bool = false
+var current_health:int
+var can_get_damage:bool = true
+
 
 func _ready() -> void:
-	pass
+	current_health = max_health
 	
 
 func _physics_process(delta):
@@ -121,4 +127,20 @@ func die():
 
 func _on_mob_detector_body_entered(body):
 	if body.collision_layer & (2) and self.is_on_floor():
-		die()
+		if current_health > 0 and can_get_damage:
+			current_health -=1
+			print(current_health)
+			can_get_damage = false
+			damage_timer.start()
+			
+		if current_health == 0:
+			die()
+
+
+func _on_damage_timer_timeout() -> void:
+	can_get_damage = true
+
+
+func _on_combo_label_triple_combo() -> void:
+	if current_health != 3:
+		current_health+=1

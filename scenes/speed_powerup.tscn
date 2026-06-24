@@ -158,6 +158,11 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3
 light_color = Color(1, 1, 0, 1)
 light_energy = 16.0
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=609697846 groups=["speed_powerups"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.2232733, 0)
+light_color = Color(1, 1, 0, 1)
+light_energy = 16.0
+
 [node name="Timer" type="Timer" parent="." unique_id=1349974491]
 wait_time = 10.0
 autostart = true

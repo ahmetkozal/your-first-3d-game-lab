@@ -34,7 +34,7 @@ material = SubResource("StandardMaterial3D_kqmrj")
 [sub_resource type="Curve3D" id="Curve3D_h2yge"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10.877335, 0, -5.9778237, 0, 0, 0, 0, 0, 0, 11.002361, 0, 6.0247264, 0, 0, 0, 0, 0, 0, -11.0023155, 0, 6.087239, 0, 0, 0, 0, 0, 0, -11.064829, 0, -6.040337),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 23.931858, 0, -15.902315, 0, 0, 0, 0, 0, 0, 24.209564, 0, 15.949217, 0, 0, 0, 0, 0, 0, -24.056839, 0, 16.469782, 0, 0, 0, 0, 0, 0, -24.119354, 0, -16.041172),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -45,6 +45,9 @@ default_font_size = 22
 
 [sub_resource type="Environment" id="Environment_0opyb"]
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0229
+volumetric_fog_albedo = Color(0.64239544, 0.0048454627, 1.3993728, 1)
 
 [node name="Level1" type="Node" unique_id=1153691554]
 script = ExtResource("1_0xm2m")
@@ -100,13 +103,13 @@ mesh = SubResource("CylinderMesh_2m5a4")
 curve = SubResource("Curve3D_h2yge")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath" unique_id=1968335626]
-transform = Transform3D(-0.99994576, 0, -0.010416232, 0, 1, 0, 0.010416232, 0, -0.99994576, 10.877335, 0, -5.9778237)
+transform = Transform3D(-0.9999589, 0, -0.008718505, 0, 1, 0, 0.008718505, 0, -0.9999589, 23.931858, 0, -15.902315)
 
 [node name="SpawnPathPowerUp" type="Path3D" parent="." unique_id=1416084762]
 curve = SubResource("Curve3D_h2yge")
 
 [node name="SpawnLocationPowerup" type="PathFollow3D" parent="SpawnPathPowerUp" unique_id=893913001]
-transform = Transform3D(-0.99994576, 0, -0.010416232, 0, 1, 0, 0.010416232, 0, -0.99994576, 10.877335, 0, -5.9778237)
+transform = Transform3D(-0.9999589, 0, -0.008718505, 0, 1, 0, 0.008718505, 0, -0.9999589, 23.931858, 0, -15.902315)
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1798000615]
 wait_time = 0.5
@@ -528,4 +531,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7914171, -0.59180737, -3.27
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="landed" from="Player" to="UserInterface/ComboLabel" method="_on_player_landed"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="triple_combo" from="UserInterface/ComboLabel" to="Player" method="_on_combo_label_triple_combo"]
 [connection signal="timeout" from="PowerUpTimer" to="." method="_on_power_up_timer_timeout"]

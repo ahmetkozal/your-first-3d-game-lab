@@ -55,7 +55,7 @@ func _on_power_up_timer_timeout():
 	var powerup = chosen_scene.instantiate()
 	
 	# 4. Konum ve yönlendirme hesaplamaları (Mevcut kodunla aynı)
-	var powerup_spawn_location = get_node("SpawnPath/SpawnLocation")
+	var powerup_spawn_location = get_node("SpawnPathPowerUp/SpawnLocationPowerup")
 	powerup_spawn_location.progress_ratio = randf()
 	
 	var player_position = $Player.position
